@@ -2,12 +2,12 @@
   <configuration default="false" name="Build Develop Image" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="imageTag" value="codelieutenant/gofiber-boilerplate" />
+        <option name="imageTag" value="dimashky/go-appointment" />
         <option name="buildArgs">
           <list>
             <DockerEnvVarImpl>
               <option name="name" value="APP_NAME" />
-              <option name="value" value="GoFiber-Boilerplate" />
+              <option name="value" value="Go-Appointment" />
             </DockerEnvVarImpl>
             <DockerEnvVarImpl>
               <option name="name" value="VERSION" />

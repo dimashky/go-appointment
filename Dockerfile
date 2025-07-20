@@ -1,6 +1,6 @@
 ARG BASE_IMAGE="golang:1.24"
 ARG PRODUCTION_IMAGE="debian:bookworm-slim"
-ARG APP_NAME="GoFiber-Boilerplate"
+ARG APP_NAME="Go-Appointment"
 
 FROM $PRODUCTION_IMAGE AS base-production
 

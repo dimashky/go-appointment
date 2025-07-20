@@ -3,7 +3,7 @@ package handlers
 import (
 	"github.com/CodeLieutenant/uberfx-common/v3/http/fiber/fiberfx"
 
-	"github.com/CodeLieutenant/GoFiber-Boilerplate/app/handlers/helloworld"
+	"github.com/dimashky/go-appointment/app/handlers/helloworld"
 )
 
 func Handlers() fiberfx.RoutesFx {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/CodeLieutenant/GoFiber-Boilerplate/app/constants"
+	"github.com/dimashky/go-appointment/app/constants"
 )
 
 func Execute(version string) error {

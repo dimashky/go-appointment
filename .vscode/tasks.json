@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "GoFiber-Boilerplate: Hot Reload",
+      "label": "Go-Appointment: Hot Reload",
       "type": "shell",
       "command": "air",
       "isBackground": true,
@@ -10,7 +10,7 @@
       "problemMatcher": []
     },
     {
-      "label": "GoFiber-Boilerplate: Race Test",
+      "label": "Go-Appointment: Race Test",
       "type": "shell",
       "command": "go",
       "args": [
@@ -25,14 +25,14 @@
       "group": "test"
     },
     {
-      "label": "GoFiber-Boilerplate: Test",
+      "label": "Go-Appointment: Test",
       "type": "shell",
       "command": "go",
       "args": ["test", "-v", "-covermode=atomic", "-timeout", "5m", "./..."],
       "group": "test"
     },
     {
-      "label": "GoFiber-Boilerplate: Format",
+      "label": "Go-Appointment: Format",
       "type": "shell",
       "command": "gofumpt",
       "args": ["-l", "-w", "."],
@@ -40,7 +40,7 @@
       "problemMatcher": []
     },
     {
-      "label": "GoFiber-Boilerplate: Lint",
+      "label": "Go-Appointment: Lint",
       "type": "shell",
       "command": "golangci-lint",
       "args": ["run"],

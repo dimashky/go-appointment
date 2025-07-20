@@ -3,7 +3,7 @@ version: '3'
 tasks:
   build:
     cmds:
-      - go build -gcflags="-N -l" -o bin/GoFiber-Boilerplate main.go
+      - go build -gcflags="-N -l" -o bin/Go-Appointment main.go
       - cp config.example.yml bin/config.yml
   fmt:
     cmds:
@@ -37,7 +37,7 @@ tasks:
     requires:
       vars: [VERSION, TARGET]
     cmds:
-      - docker build --target {{ .TARGET }} --build-arg APP_NAME=GoFiber-Boilerplate --build-arg VERSION="v{{ .VERSION }}" -t "codeLieutenant/gofiber-boilerplate:{{ .VERSION }}" --file ./Dockerfile --compress ./
+      - docker build --target {{ .TARGET }} --build-arg APP_NAME=Go-Appointment --build-arg VERSION="v{{ .VERSION }}" -t "dimashky/go-appointment:{{ .VERSION }}" --file ./Dockerfile --compress ./
   clean:
     cmds:
       - rm -rf bin/

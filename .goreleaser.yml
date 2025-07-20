@@ -3,10 +3,10 @@ version: 2
 report_sizes: true
 
 builds:
-  - id: GoFiber-Boilerplate
+  - id: Go-Appointment
     goos:
       - linux
-    binary: GoFiber-Boilerplate
+    binary: Go-Appointment
     no_unique_dist_dir: false
     env:
       - CFLAGS="-O3"
@@ -45,7 +45,7 @@ changelog:
 
 dockers:
   - image_templates:
-      - codeLieutenant/gofiber-boilerplate:{{ .Version }}-amd64
+      - dimashky/go-appointment:{{ .Version }}-amd64
     goarch: amd64
     goamd64: v3
     goos: linux
@@ -56,7 +56,7 @@ dockers:
       - '--build-arg="APP_NAME={{ .ProjectName }}"'
 
   - image_templates:
-      - codeLieutenant/gofiber-boilerplate:{{ .Version }}-arm64v8
+      - dimashky/go-appointment:{{ .Version }}-arm64v8
     goarch: arm64
     id: app-arm
     goos: linux
@@ -66,17 +66,17 @@ dockers:
       - '--build-arg="APP_NAME={{ .ProjectName }}"'
 
 docker_manifests:
-  - name_template: 'codeLieutenant/gofiber-boilerplate:{{ .Version }}'
+  - name_template: 'dimashky/go-appointment:{{ .Version }}'
     skip_push: false
     image_templates:
-      - 'codeLieutenant/gofiber-boilerplate:{{ .Version }}-amd64'
-      - 'codeLieutenant/gofiber-boilerplate:{{ .Version }}-arm64v8'
+      - 'dimashky/go-appointment:{{ .Version }}-amd64'
+      - 'dimashky/go-appointment:{{ .Version }}-arm64v8'
 
-  - name_template: 'codeLieutenant/gofiber-boilerplate:latest'
+  - name_template: 'dimashky/go-appointment:latest'
     skip_push: false
     image_templates:
-      - 'codeLieutenant/gofiber-boilerplate:{{ .Version }}-amd64'
-      - 'codeLieutenant/gofiber-boilerplate:{{ .Version }}-arm64v8'
+      - 'dimashky/go-appointment:{{ .Version }}-amd64'
+      - 'dimashky/go-appointment:{{ .Version }}-arm64v8'
 
 release:
   mode: keep-existing

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/CodeLieutenant/GoFiber-Boilerplate/app/commands"
+	"github.com/dimashky/go-appointment/app/commands"
 )
 
 const Version = "0.0.1"

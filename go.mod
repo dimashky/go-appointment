@@ -1,4 +1,4 @@
-module github.com/CodeLieutenant/GoFiber-Boilerplate
+module github.com/dimashky/go-appointment
 
 go 1.24
 

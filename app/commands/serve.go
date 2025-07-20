@@ -8,9 +8,9 @@ import (
 	"github.com/CodeLieutenant/uberfx-common/v3/http/fiber/fiberfx"
 	"github.com/CodeLieutenant/uberfx-common/v3/loggerfx"
 
-	"github.com/CodeLieutenant/GoFiber-Boilerplate/app/config"
-	"github.com/CodeLieutenant/GoFiber-Boilerplate/app/constants"
-	"github.com/CodeLieutenant/GoFiber-Boilerplate/app/handlers"
+	"github.com/dimashky/go-appointment/app/config"
+	"github.com/dimashky/go-appointment/app/constants"
+	"github.com/dimashky/go-appointment/app/handlers"
 )
 
 func loggerSink(cfg *config.Logging) loggerfx.Sink {
