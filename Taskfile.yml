@@ -1,0 +1,43 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - go build -gcflags="-N -l" -o bin/GoFiber-Boilerplate main.go
+      - cp config.example.yml bin/config.yml
+  fmt:
+    cmds:
+      - go tool gofumpt -l -w .
+  lint:
+    cmds:
+      - go tool golangci-lint run --color "always" -v -j 8
+  sec:
+    cmds:
+      - go tool gosec ./...
+  tidy:
+    cmds:
+      - rm -f go.sum
+      - go mod tidy
+  update:
+    cmds:
+      - go get -u ./... # Updates regular packages
+      - go get -u -t ./... # Updates Test packages
+  fieldalign:
+    cmds:
+      - go tool fieldalignment -fix ./...
+  test:
+    cmds:
+      - go test -covermode=atomic -race -coverprofile=coverage.txt -timeout 5m -json -v ./... | go tool gotestfmt -showteststatus
+    env:
+        GOMAXPROCS: 8
+  swagger-gen:
+    cmds:
+      - go tool swag init --outputTypes="go" --parseDependency
+  docker-build:
+    requires:
+      vars: [VERSION, TARGET]
+    cmds:
+      - docker build --target {{ .TARGET }} --build-arg APP_NAME=GoFiber-Boilerplate --build-arg VERSION="v{{ .VERSION }}" -t "codeLieutenant/gofiber-boilerplate:{{ .VERSION }}" --file ./Dockerfile --compress ./
+  clean:
+    cmds:
+      - rm -rf bin/
