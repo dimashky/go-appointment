@@ -1,3 +1,4 @@
+version: 1
 run:
   concurrency: 8
   timeout: 10m
