@@ -168,5 +168,15 @@
     "run": true
   },
   "go.testExplorer.enable": true,
-  "go.testExplorer.concatenateMessages": true
+  "go.testExplorer.concatenateMessages": true,
+  "cSpell.words": [
+    "configfx",
+    "dimashky",
+    "fiberfx",
+    "gorm",
+    "loggerfx",
+    "mapstructure",
+    "uberfx",
+    "Zerolog"
+  ]
 }

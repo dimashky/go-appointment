@@ -10,7 +10,10 @@ import (
 
 	"github.com/dimashky/go-appointment/app/config"
 	"github.com/dimashky/go-appointment/app/constants"
+	"github.com/dimashky/go-appointment/app/database"
 	"github.com/dimashky/go-appointment/app/handlers"
+	"github.com/dimashky/go-appointment/app/handlers/users"
+	"github.com/dimashky/go-appointment/app/repositories"
 )
 
 func loggerSink(cfg *config.Logging) loggerfx.Sink {
@@ -33,6 +36,9 @@ func Serve() *cobra.Command {
 			app := fx.New(
 				configfx.Module(cfg),
 				loggerfx.ZerologModule(loggerSink(&cfg.Logging)),
+				database.Module(),
+				repositories.Module(),
+				users.Module(),
 				fiberfx.App(constants.AppName, handlers.Handlers()),
 				fiberfx.RunApp(cfg.HTTP.Addr, constants.AppName, cfg.HTTP.ShutdownTimeout),
 			)

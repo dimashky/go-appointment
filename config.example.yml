@@ -6,6 +6,13 @@ http:
   shutdown_timeout: 1s
   profiler_addr: '0.0.0.0:5000'
 
+database:
+  host: 'localhost'
+  port: 3306
+  user: 'appointment_user'
+  password: 'appointment_password'
+  name: 'appointment_db'
+  charset: 'utf8mb4'
 
 logging:
   level: debug
